@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>卡片翻转</title>
+		<style>
+			body{
+				background-color: #CC8091;
+			}
+			div{
+				position: absolute;
+				top: 30%;
+				left: 40%;
+				width: 250px;
+				height: 350px;
+			}
+			#card{
+				position: absolute;
+				top: 0;
+				left: 0;
+				transition: all 1s linear; 
+				-webkit-backface-visibility: hidden;
+			}
+			#card2{
+				position: absolute;
+				top: 0;
+				left: 0;
+				-webkit-transform: rotateY(-180deg);
+				-webkit-backface-visibility: hidden;
+				transition: all 1s linear; 
+			}
+			/*鼠标hover样式 */
+			div:hover #card{
+				-webkit-transform: rotateY(180deg);
+			}
+			div:hover #card2{
+				-webkit-transform: rotateY(0);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">	
+			<div id="div2"></div>
+			<img src="photo/卡片翻转/反面.jpg" id="card2" name="card2">
+			<img src="photo/卡片翻转/正面.jpg" id="card" name="card">
+		</div>
+	</body>
+</html>
