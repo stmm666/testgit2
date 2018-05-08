@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>旋转立方体</title>
+		<style>
+			body{
+				background-color: #000;
+			}
+			#star{
+				position: absolute;
+				top: 300px;
+				left: 600px;
+			}
+			/*舞台*/
+			#stage{
+				-webkit-perspective: 300px;
+				-webkit-perspective-origin:200px 100px;
+				position: absolute;
+				top: 200px;
+				left: 500px;
+			}
+			/*容器*/
+			#case_all{
+				-webkit-transform-style: preserve-3d;			
+				-webkit-animation:case0 20s linear infinite;
+				-webkit-animation-play-state:paused;	
+				width: 400px;
+				height: 400px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.case{
+				width: 200px;
+				height: 200px;
+				border: 2px solid #96c;
+				background-color: rgba(204,204,255,0.3);
+				position: absolute;
+				top: 0;
+			}
+			.case1{	
+				-webkit-transform: rotateY(0deg);
+				-webkit-transform:translateZ(100px);
+				position: absolute;
+				left: 100px;
+
+			}
+			.case2{	
+				-webkit-transform: rotateY(90deg);
+				position: absolute;
+				left: 0;
+			}
+			.case3{	
+				-webkit-transform: rotateY(180deg);
+				-webkit-transform:translateZ(-100px);
+				position: absolute;
+				left: 100px;
+			}
+			.case4{
+				-webkit-transform: rotateY(270deg);
+				position: absolute;
+				left: 200px;
+			}
+			.case5{
+				-webkit-transform: rotateX(90deg);
+				position: absolute;
+				top: 100px;
+				left: 100px;
+			}
+			.case6{
+				-webkit-transform: rotateX(90deg);
+				position: absolute;
+				top: -100px;
+				left: 100px;
+			}
+			@-webkit-keyframes case0/* Safari 和 Chrome */
+			{
+				0%   {-webkit-transform: rotateY(0deg);}
+				100% {-webkit-transform: rotateY(-360deg);}
+			}
+			/*鼠标点击后*/
+			#case_all:hover{
+				-webkit-animation-play-state:running;
+			}
+		</style>
+	</head>
+	<body>     
+		<img src="photo/以前/舞蝶.png" id="star" name="star">
+		<div id="stage">
+			<div id="case_all">
+				<div class="case case1"></div>
+				<div class="case case2"></div>
+				<div class="case case3"></div>
+				<div class="case case4"></div>
+				<div class="case case5"></div>
+				<div class="case case6"></div>
+			</div>
+		</div>
+	</body>
+</html>
